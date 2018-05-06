@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-05-06T00:52:44" hostname="dibbydon-PC" time="0.031">
+  <properties/>
+  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.027"/>
+  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.001"/>
+  <testcase name="givenAnInvalidNumber_1_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.001"/>
+  <testcase name="ivenAnInvalidNumber_2_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.001"/>
+  <testcase name="givenInput_10_Return_4_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.0"/>
+  <testcase name="givenInput_100_Return_25_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
