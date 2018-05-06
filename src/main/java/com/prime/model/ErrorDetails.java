@@ -1,22 +1,21 @@
 package com.prime.model;
 
-public class ErrorDetails {
-	private String message;
-	private String additionalMessage;
+public final class ErrorDetails {
+	private final String message;
+	private final String additionalMessage;
 
+	public ErrorDetails (String message, String additionalMessage) {
+		this.message = message;
+		this.additionalMessage = additionalMessage;
+	}
+	
 	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getAdditionalMessage() {
 		return additionalMessage;
 	}
 
-	public void setAdditionalMessage(String additionalMessage) {
-		this.additionalMessage = additionalMessage;
-	}
 }

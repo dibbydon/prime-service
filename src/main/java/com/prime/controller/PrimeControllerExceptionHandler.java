@@ -16,13 +16,10 @@ public class PrimeControllerExceptionHandler {
    
 	@ExceptionHandler(BadInputException.class)
 	public ResponseEntity<?> exception(Exception ex){
-	   ErrorDetails errorDetails = new ErrorDetails();
-	   errorDetails.setMessage(ex.getMessage());
-	   
 	   StringWriter stringWriter = new StringWriter();
 	   ex.printStackTrace(new PrintWriter(stringWriter));
 	   
-	   errorDetails.setAdditionalMessage(stringWriter.toString());
+	   ErrorDetails errorDetails = new ErrorDetails(ex.getMessage(), stringWriter.toString());
 	   return new ResponseEntity<> (errorDetails, HttpStatus.BAD_REQUEST);
 	   
    }

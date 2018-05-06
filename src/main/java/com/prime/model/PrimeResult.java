@@ -1,18 +1,15 @@
 package com.prime.model;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PrimeResult {
+public final class PrimeResult {
 	@JsonProperty("Initial")
-    private Integer initial;
+    private final Integer initial;
 	@JsonProperty("Primes")
-    private List<Integer> primes;
-    
-    public PrimeResult() {
-    	
-    }
+    private final List<Integer> primes;
     
     public PrimeResult(Integer initial, List<Integer> primes){
     	this.initial = initial;
@@ -22,13 +19,9 @@ public class PrimeResult {
 	public Integer getInitial() {
 		return initial;
 	}
-	public void setInitial(Integer initial) {
-		this.initial = initial;
-	}
+	
 	public List<Integer> getPrimes() {
-		return primes;
+		return Collections.unmodifiableList(primes);
 	}
-	public void setPrimes(List<Integer> primes) {
-		this.primes = primes;
-	}
+	
 }
