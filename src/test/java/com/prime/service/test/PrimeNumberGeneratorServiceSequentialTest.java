@@ -1,5 +1,6 @@
 package com.prime.service.test;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -8,38 +9,43 @@ import org.junit.Test;
 
 import com.prime.exception.BadInputException;
 import com.prime.model.PrimeResult;
+import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
-import com.prime.service.PrimeNumberGeneratorServiceImpl;
+import com.prime.service.PrimeNumberGeneratorServiceParralell;
 
-public class PrimeNumberGeneratorServiceTest {
+public class PrimeNumberGeneratorServiceSequentialTest {
     
-	
+	private PrimeNumberGeneratorFactory factory;
 	private PrimeNumberGeneratorService generatorService;
 	
 	@Before
 	public void setUp() {
-		generatorService = new PrimeNumberGeneratorServiceImpl();
+		factory = new PrimeNumberGeneratorFactory();
+		generatorService = factory.getPrimeNumberGenerator();
 	}
 	
 	@After
 	public void TearDown() {
 		generatorService = null;
+		factory = null;
 	}
 	
-	
+		
 	@Test(expected=BadInputException.class)
 	public void givenAnInvalidNumber_1_throwInvalidInputException() throws BadInputException {
 		Integer limit = 1;
 		generatorService.generatePrimeNumbers(limit);
 	}
 	
-	@Test()
+	@Test
 	public void givenNumber_2_Return_1_PrimeNumber() throws BadInputException {
 		Integer limit = 2;
 		PrimeResult result = generatorService.generatePrimeNumbers(limit);
 		assertTrue("expected value not returned", result.getInitial() == 2);
 		assertTrue("expected size not returned", result.getPrimes().size() == 1);
 		assertTrue("expected value not returned",result.getPrimes().contains(2));
+		
+		assertThat(generatorService, instanceOf(PrimeNumberGeneratorServiceParralell.class));
 	}
 	
 	@Test
@@ -88,5 +94,7 @@ public class PrimeNumberGeneratorServiceTest {
 		assertTrue("expected value not returned", result.getPrimes().contains(701));
 		assertTrue("expected value not returned", result.getPrimes().contains(997));
 	}
+	
+	
 	
 }

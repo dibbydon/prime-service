@@ -12,6 +12,8 @@ plugins {
     id 'java-library'
     id 'org.springframework.boot' version '2.0.1.RELEASE'
     id "io.spring.dependency-management" version "1.0.5.RELEASE"
+    id "org.asciidoctor.convert" version "1.5.3"
+    
 }
 
 dependencies {
@@ -23,7 +25,8 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
-
+    asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc'
     compile 'org.springframework.boot:spring-boot'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
@@ -37,3 +40,17 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
+
+ext {
+    snippetsDir = file('build/generate-snippets')
+}
+
+test {
+    outputs.dir snippetsDir
+}
+
+asciidoctor {
+    inputs.dir snippetsDir
+    dependsOn test
+}
+

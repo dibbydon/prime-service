@@ -8,6 +8,7 @@ import java.io.IOException;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,9 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.ReadContext;
 
@@ -32,6 +32,9 @@ import com.jayway.jsonpath.ReadContext;
 public class PrimeIntegrationTest {
 	@LocalServerPort
 	private int port;
+	
+	@Rule
+	public JUnitRestDocumentation restDoc = new JUnitRestDocumentation("target/generated-snippet");
 	
 	@Autowired
 	private TestRestTemplate restTemplate;
@@ -56,8 +59,29 @@ public class PrimeIntegrationTest {
 	}
 	
 	@Test
+	public void givenValidInputOf_10_WithOptionalAlgorithmExpectAnOkAndValidJsonResponse() throws IOException {
+		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/10?algo=pll", String.class);
+		System.out.println(responseEntity);
+		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
+		assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.OK));
+		assertThat(10 , equalTo(ctx.read("$.Initial")));
+		assertThat(ctx.read("$.Primes"), hasItems(2,3,5,7));
+	}
+	
+	@Test
 	public void givenInvalidInputOf_1_ExpectErrorDetailedMessage() throws IOException {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/1", String.class);
+		System.out.println(responseEntity);
+		String message = "input must be greater than 2";
+		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
+		assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.BAD_REQUEST));
+		assertThat(message , equalTo(ctx.read("$.message")));
+		assertNotNull(ctx.read("$.additionalMessage"));
+	}
+	
+	@Test
+	public void givenInvalidInputOf_1_WithOptionalParameterExpectErrorDetailedMessage() throws IOException {
+		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/1?algo=pll", String.class);
 		System.out.println(responseEntity);
 		String message = "input must be greater than 2";
 		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
