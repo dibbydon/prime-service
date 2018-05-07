@@ -3,8 +3,10 @@ package com.prime.model;
 import java.util.Collections;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+@XmlRootElement
 public final class PrimeResult {
 	@JsonProperty("Initial")
     private final Integer initial;
