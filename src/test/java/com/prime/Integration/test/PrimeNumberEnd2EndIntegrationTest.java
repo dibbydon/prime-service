@@ -8,7 +8,6 @@ import java.io.IOException;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.jayway.jsonpath.JsonPath;
@@ -29,12 +27,9 @@ import com.jayway.jsonpath.ReadContext;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class PrimeIntegrationTest {
+public class PrimeNumberEnd2EndIntegrationTest {
 	@LocalServerPort
 	private int port;
-	
-	@Rule
-	public JUnitRestDocumentation restDoc = new JUnitRestDocumentation("target/generated-snippet");
 	
 	@Autowired
 	private TestRestTemplate restTemplate;

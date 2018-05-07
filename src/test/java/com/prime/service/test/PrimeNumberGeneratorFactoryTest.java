@@ -35,7 +35,7 @@ public class PrimeNumberGeneratorFactoryTest {
 	}
 
 	@Test
-	public void testGivenParameter_atk_FactoryReturns_AtkinsGenerator() {
+	public void testGivenParameter_Option_FactoryReturns_AtkinsGenerator() {
 		factory = new PrimeNumberGeneratorFactory("pll");
 		PrimeNumberGeneratorService genService = factory.getPrimeNumberGenerator();
 		

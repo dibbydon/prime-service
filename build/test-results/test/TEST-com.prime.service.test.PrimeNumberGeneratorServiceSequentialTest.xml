@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-05-07T20:35:09" hostname="dibbydon-PC" time="0.049">
+  <properties/>
+  <testcase name="givenNumber_2_Return_1_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
+  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.045"/>
+  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
+  <testcase name="givenAnInvalidNumber_1_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
+  <testcase name="givenInput_10_Return_4_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
+  <testcase name="givenInput_100_Return_25_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
+  <system-out><![CDATA[2018-05-07 21:35:09.690 ERROR 13764 --- [    Test worker] .s.PrimeNumberGeneratorServiceSequential : input must be greater than 2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -15,6 +15,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,10 +29,11 @@ import com.prime.exception.BadInputException;
 
 public class PrimeNumberControllerTest {
 	
+	@Autowired
 	private MockMvc mockMvc;
 	
 	@Rule
-	public JUnitRestDocumentation restDoc = new JUnitRestDocumentation("target/generated-snippet");
+	public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation();
 	
 	@InjectMocks
 	private PrimeNumberController primeNumbercontroller = new PrimeNumberController();
@@ -40,7 +42,6 @@ public class PrimeNumberControllerTest {
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		mockMvc = MockMvcBuilders.standaloneSetup(primeNumbercontroller)
-				//.apply(documentationConfiguration(this.restDoc))
 				.setControllerAdvice(new PrimeControllerExceptionHandler())
                 .defaultRequest(get("/")
 		        .accept(MediaType.APPLICATION_JSON_UTF8))
