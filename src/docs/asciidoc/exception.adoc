@@ -1,9 +1,27 @@
 = Rest Doc for Prime API
 
 .request
+include::{snippets}/exception/curl-request.adoc[]
+
+.request
 include::{snippets}/exception/http-request.adoc[]
 
 .response
 include::{snippets}/exception/http-response.adoc[]
+
+.request
+include::{snippets}/exception/httpie-request.adoc[]
+
+.request
+include::{snippets}/exception/request-body.adoc[]
+
+.response
+include::{snippets}/exception/response-body.adoc[]
+
+.response
+include::{snippets}/exception/response-fields.adoc[]
+
+
+
 
 

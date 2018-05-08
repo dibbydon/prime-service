@@ -12,9 +12,11 @@ import com.prime.exception.InvalidInputException;
 import com.prime.model.PrimeResult;
 
 /**
+ * 
  * @author dibbydon
- * Implementation of a Parallel Algorithm for finding 
- * prime number within a specific limit.
+ * This class attempt to provides an implementation of the Sieve of Erastothenes algorithm 
+ * for finding prime number within a specific limit with a parrallel.
+ * 
  */
 
 public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGeneratorService {

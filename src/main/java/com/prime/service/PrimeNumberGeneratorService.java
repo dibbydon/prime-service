@@ -5,7 +5,7 @@ import com.prime.model.PrimeResult;
 
 /**
  * @author dibbydon
- *
+ * an interface specfying the contract for all prime generators.
  */
 public interface PrimeNumberGeneratorService {
 	

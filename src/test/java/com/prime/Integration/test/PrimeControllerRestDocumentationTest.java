@@ -51,7 +51,7 @@ public class PrimeControllerRestDocumentationTest {
 		                .andExpect(status().isBadRequest())
 		                .andDo(document("exception", responseFields(
 		                		fieldWithPath("message").description("error message thrown by the exception"),
-		                		fieldWithPath("additionalMessage").description("a more detailed excetion providing stack traces"))));
+		                		fieldWithPath("additionalMessage").description("a more detailed exception based on the stack traces"))));
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class PrimeControllerRestDocumentationTest {
 					.andDo(print())
                     .andExpect(status().isOk())
                     .andDo(document("optional", requestParameters(
-                            		        parameterWithName("algo").description("parameter to determine the algorithm to be used in request"))));
+                            		        parameterWithName("algo").description("optional request parameter to request an algorithm in processing a request"))));
 	}
 	
 }

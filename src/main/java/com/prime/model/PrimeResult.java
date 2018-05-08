@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement
 public final class PrimeResult implements Serializable{
 	/**
-	 * 
+	 * @author dibbydon
+	 * this class provide the model object for primes
+	 * having the limit and the list of primes as variable
 	 */
 	private static final long serialVersionUID = 1L;
 

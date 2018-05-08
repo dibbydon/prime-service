@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement
 public final class ErrorDetails implements Serializable {
 	/**
-	 * 
+	 * @author dibbydon
+	 * This class provide a model to for error that 
+	 * may be thrown during processing.
 	 */
 	private static final long serialVersionUID = 1L;
 

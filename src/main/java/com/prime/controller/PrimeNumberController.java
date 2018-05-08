@@ -16,9 +16,17 @@ import com.prime.model.PrimeResult;
 import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
 
+/**
+ * 
+ * @author dibbydon
+ * This class marks the entry point into the 
+ * prime service api, it provides two get methods for 
+ * handing default request and option to request an algorithm
+ * for execution.
+ *
+ */
 @RestController
 public class PrimeNumberController {
-    
 	
 	
 	@GetMapping(value = "/primes/{limit}",  produces = { "application/json", "application/xml" })

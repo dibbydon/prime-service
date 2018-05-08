@@ -5,7 +5,8 @@ package com.prime.exception;
 
 /**
  * @author dibbydon
- *
+ * This class marks exception that may be thrown when 
+ * an invalid Input request
  */
 public class InvalidInputException extends Exception {
 

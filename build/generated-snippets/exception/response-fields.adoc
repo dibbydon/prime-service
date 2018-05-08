@@ -7,6 +7,6 @@
 
 |`+additionalMessage+`
 |`+String+`
-|a more detailed excetion providing stack traces
+|a more detailed exception based on the stack traces
 
 |===

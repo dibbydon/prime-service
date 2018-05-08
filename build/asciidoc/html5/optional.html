@@ -425,6 +425,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="title">request</div>
 <div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/primes/10?algo=pll' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">request</div>
+<div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /primes/10?algo=pll HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
@@ -441,10 +448,48 @@ Content-Length: 33
 {"Initial":10,"Primes":[2,3,5,7]}</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="title">request</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ http GET 'http://localhost:8080/primes/10?algo=pll' \
+    'Accept:application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">request</div>
+<div class="content">
+<pre class="highlight nowrap"><code></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">response</div>
+<div class="content">
+<pre class="highlight nowrap"><code>{"Initial":10,"Primes":[2,3,5,7]}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. request</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>algo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional request parameter to request an algorithm in processing a request</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-08 23:49:24 +01:00
+Last updated 2018-05-09 00:17:09 +01:00
 </div>
 </div>
 </body>
