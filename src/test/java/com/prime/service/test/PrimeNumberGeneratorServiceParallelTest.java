@@ -99,6 +99,7 @@ public class PrimeNumberGeneratorServiceParallelTest {
 	public void givenInput_10000000_assertReturnIn3milisecond() throws InvalidInputException {
 		Integer upperBound = 10000000;
 		PrimeResult result = generatorService.generatePrimeNumbers(upperBound);
+		assertNotNull(result);
 	}
 	
 	
