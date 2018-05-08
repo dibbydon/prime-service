@@ -18,7 +18,11 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import com.prime.controller.PrimeNumberController;
-
+/**
+ * 
+ * @author dibbydon
+ * a rest documentation test case to generate api doc for rest endpoints.
+ */
 @RunWith(SpringRunner.class)
 @WebMvcTest(PrimeNumberController.class)
 @AutoConfigureRestDocs(outputDir = "build/generated-snippets")

@@ -13,6 +13,14 @@ import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
 import com.prime.service.PrimeNumberGeneratorServiceSequential;
 
+/**
+ * 
+ * @author dibbydon
+ * a unit test to verify that given a limit  
+ * the service instance returns the expected prime numbers
+ * this service assumes a sequential process of applying the 
+ * sieve of erastosthenes in prime nuber generation. 
+ */
 public class PrimeNumberGeneratorServiceSequentialTest {
     
 	private PrimeNumberGeneratorFactory factory;
@@ -108,6 +116,13 @@ public class PrimeNumberGeneratorServiceSequentialTest {
 		assertTrue("expected value not returned", result.getPrimes().contains(11));
 	}
 	
+	/**
+	 * 
+	 * @throws InvalidInputException
+	 * this assume a minimum of 3 milisecond should not be exceeded 
+	 * in calculation and returning results. usually this should be 
+	 * benchmark with stated criteria.
+	 */
 	@Test(timeout= 3000)
 	public void givenInput_10000000_assertReturnIn3milisecond() throws InvalidInputException {
 		Integer upperBound = 10000000;

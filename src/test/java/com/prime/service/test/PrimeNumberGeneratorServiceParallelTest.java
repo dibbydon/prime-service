@@ -12,7 +12,14 @@ import com.prime.model.PrimeResult;
 import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
 import com.prime.service.PrimeNumberGeneratorServiceParralell;
-
+/**
+ * 
+ * @author dibbydon
+ * a unit test to verify that given a limit  
+ * the service instance returns the expected prime numbers
+ * this service assumes a parallel process of applying the 
+ * sieve of erastosthenes in prime number generation. 
+ */
 public class PrimeNumberGeneratorServiceParallelTest {
     
 	private PrimeNumberGeneratorFactory factory;
@@ -95,6 +102,26 @@ public class PrimeNumberGeneratorServiceParallelTest {
 		assertTrue("expected value not returned", result.getPrimes().contains(997));
 	}
 	
+	@Test
+	public void givenInput_11_Return_5_PrimeNumber() throws InvalidInputException {
+		Integer upperBound = 11;
+		PrimeResult result = generatorService.generatePrimeNumbers(upperBound);
+		assertTrue("expected value not returned", result.getInitial() == 11);
+		assertTrue("expected size not returned", result.getPrimes().size() == 5);
+		assertTrue("expected value not returned", result.getPrimes().contains(2));
+		assertTrue("expected value not returned", result.getPrimes().contains(3));
+		assertTrue("expected value not returned", result.getPrimes().contains(5));
+		assertTrue("expected value not returned", result.getPrimes().contains(7));
+		assertTrue("expected value not returned", result.getPrimes().contains(11));
+	}
+	
+	/**
+	 * 
+	 * @throws InvalidInputException
+	 * this assume a minimum of 3 milisecond should not be exceeded 
+	 * in calculation and returning results. usually this should be 
+	 * benchmark with stated criteria.
+	 */
 	@Test(timeout= 3000)
 	public void givenInput_10000000_assertReturnIn3milisecond() throws InvalidInputException {
 		Integer upperBound = 10000000;

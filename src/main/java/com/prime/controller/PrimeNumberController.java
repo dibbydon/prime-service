@@ -21,7 +21,7 @@ public class PrimeNumberController {
     
 	
 	
-	@GetMapping(value = "/primes/{limit}", produces = { "application/json", "application/xml" })
+	@GetMapping(value = "/primes/{limit}",  produces = { "application/json", "application/xml" })
 	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit) throws InvalidInputException {
 		PrimeNumberGeneratorFactory primeFactory = new PrimeNumberGeneratorFactory();
 		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();

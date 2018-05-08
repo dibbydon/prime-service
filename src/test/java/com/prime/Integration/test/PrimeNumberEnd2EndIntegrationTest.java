@@ -25,6 +25,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.ReadContext;
 
+/**
+ * 
+ * @author dibbydon
+ * A full Integration end to end test to assert that the component function
+ * as expected.
+ * 
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class PrimeNumberEnd2EndIntegrationTest {
@@ -44,7 +51,7 @@ public class PrimeNumberEnd2EndIntegrationTest {
 	}
 
 	@Test
-	public void givenValidInputOf_10_ExpectAnOkAndValidJsonResponse() throws IOException {
+	public void givenValidInputOf_10_ExpectStatusOkAndValidJsonResponse() throws IOException {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/10", String.class);
 		System.out.println(responseEntity);
 		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
@@ -54,7 +61,7 @@ public class PrimeNumberEnd2EndIntegrationTest {
 	}
 	
 	@Test
-	public void givenValidInputOf_10_WithOptionalAlgorithmExpectAnOkAndValidJsonResponse() throws IOException {
+	public void givenValidInputOf_10_WithOptionalAlgorithmExpectStatusOkAndValidJsonResponse() throws IOException {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/10?algo=pll", String.class);
 		System.out.println(responseEntity);
 		ReadContext ctx = JsonPath.parse(responseEntity.getBody());

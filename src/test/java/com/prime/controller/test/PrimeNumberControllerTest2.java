@@ -6,25 +6,27 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.prime.controller.PrimeControllerExceptionHandler;
 import com.prime.controller.PrimeNumberController;
 
+/**
+ * 
+ * @author dibbydon
+ *
+ * A test to verify controller would accept application/xml request
+ * and provide application/xml response
+ */
 public class PrimeNumberControllerTest2 {
 	@Autowired
 	private MockMvc mockMvc;
-	
-	@Rule
-	public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation();
 	
 	@InjectMocks
 	private PrimeNumberController primeNumbercontroller = new PrimeNumberController();
@@ -50,7 +52,7 @@ public class PrimeNumberControllerTest2 {
         
 		mockMvc.perform(get("/primes/{limit}", limit))
 		       .andExpect(status().isOk())
-		       .andExpect(content().contentType(MediaType.APPLICATION_XML_VALUE));
+		       .andExpect(content().contentType(MediaType.APPLICATION_XML));
 	}
 
 }
