@@ -1,16 +1,26 @@
 package com.prime.model;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-@XmlRootElement
-public final class PrimeResult {
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement
+public final class PrimeResult implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty("Initial")
+	@JacksonXmlProperty(localName="Initial")
     private Integer initial;
+	
 	@JsonProperty("Primes")
+	@JacksonXmlProperty(localName="Primes")
     private List<Integer> primes;
     
 	public PrimeResult(){
