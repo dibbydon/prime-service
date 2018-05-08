@@ -21,7 +21,7 @@ import com.prime.controller.PrimeNumberController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(PrimeNumberController.class)
-@AutoConfigureRestDocs(outputDir = "build/generate-snippets")
+@AutoConfigureRestDocs(outputDir = "build/generated-snippets")
 public class PrimeControllerRestDocumentationTest {
 
 	@Autowired
@@ -43,8 +43,9 @@ public class PrimeControllerRestDocumentationTest {
 	@Test 
 	public void testRequestWithInvalidInputShouldReturnErrorResponse() throws Exception {
 		mockMvc.perform(get("/primes/1").accept(MediaType.APPLICATION_JSON))
+		                .andDo(print())
 		                .andExpect(status().isBadRequest())
-		                .andDo(document("error", responseFields(
+		                .andDo(document("index", responseFields(
 		                		fieldWithPath("message").description("error message thrown by the exception"),
 		                		fieldWithPath("additionalMessage").description("a more detailed excetion providing stack traces"))));
 	}
@@ -55,7 +56,7 @@ public class PrimeControllerRestDocumentationTest {
 					.andDo(print())
                     .andExpect(status().isOk())
                     .andDo(document("index", requestParameters(
-                            		          parameterWithName("algo").description("parameter to determine the algorithm to be used in request"))));
+                            		        parameterWithName("algo").description("parameter to determine the algorithm to be used in request"))));
 	}
 	
 }

@@ -9,10 +9,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement
 public final class PrimeResult {
 	@JsonProperty("Initial")
-    private final Integer initial;
+    private Integer initial;
 	@JsonProperty("Primes")
-    private final List<Integer> primes;
+    private List<Integer> primes;
     
+	public PrimeResult(){
+		super();
+	}
+	
     public PrimeResult(Integer initial, List<Integer> primes){
     	this.initial = initial;
     	this.primes = primes;
