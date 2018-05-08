@@ -35,7 +35,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.springframework.boot:spring-boot-devtools'
 
-    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.5'
 }
 
 // In this section you declare where to find the dependencies of your project

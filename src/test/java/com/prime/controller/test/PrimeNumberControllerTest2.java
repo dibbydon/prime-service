@@ -50,7 +50,7 @@ public class PrimeNumberControllerTest2 {
         
 		mockMvc.perform(get("/primes/{limit}", limit))
 		       .andExpect(status().isOk())
-		       .andExpect(content().contentType(MediaType.APPLICATION_XML));
+		       .andExpect(content().contentType(MediaType.APPLICATION_XML_VALUE));
 	}
 
 }

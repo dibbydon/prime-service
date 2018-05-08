@@ -1,15 +1,22 @@
 package com.prime.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import java.io.Serializable;
 
-public final class ErrorDetails {
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@XmlRootElement
+public final class ErrorDetails implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
-	@JacksonXmlProperty
 	private final String message;
 	
 	@JsonProperty
-	@JacksonXmlProperty
 	private final String additionalMessage;
 
 	public ErrorDetails (String message, String additionalMessage) {

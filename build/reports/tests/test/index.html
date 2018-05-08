@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">28</div>
+<div class="counter">29</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">5</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">7.196s</div>
+<div class="counter">7.374s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">82%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,13 +58,41 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Packages</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Classes</a>
+<a href="#tab1">Packages</a>
+</li>
+<li>
+<a href="#tab2">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html">PrimeNumberEnd2EndIntegrationTest</a>.
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html#givenInvalidInputOf_1_ExpectErrorDetailedMessage">givenInvalidInputOf_1_ExpectErrorDetailedMessage</a>
+</li>
+<li>
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html">PrimeNumberEnd2EndIntegrationTest</a>.
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html#givenInvalidInputOf_1_WithOptionalParameterExpectErrorDetailedMessage">givenInvalidInputOf_1_WithOptionalParameterExpectErrorDetailedMessage</a>
+</li>
+<li>
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html">PrimeNumberEnd2EndIntegrationTest</a>.
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html#givenValidInputOf_10_ExpectAnOkAndValidJsonResponse">givenValidInputOf_10_ExpectAnOkAndValidJsonResponse</a>
+</li>
+<li>
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html">PrimeNumberEnd2EndIntegrationTest</a>.
+<a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html#givenValidInputOf_10_WithOptionalAlgorithmExpectAnOkAndValidJsonResponse">givenValidInputOf_10_WithOptionalAlgorithmExpectAnOkAndValidJsonResponse</a>
+</li>
+<li>
+<a href="classes/com.prime.controller.test.PrimeNumberControllerTest2.html">PrimeNumberControllerTest2</a>.
+<a href="classes/com.prime.controller.test.PrimeNumberControllerTest2.html#testGivenAnXmlRequestThenReturnAnXmlResponse">testGivenAnXmlRequestThenReturnAnXmlResponse</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -79,24 +107,24 @@
 </thead>
 <tbody>
 <tr>
-<td class="success">
+<td class="failures">
 <a href="packages/com.prime.Integration.test.html">com.prime.Integration.test</a>
 </td>
 <td>7</td>
-<td>0</td>
-<td>0</td>
-<td>0.730s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="packages/com.prime.controller.test.html">com.prime.controller.test</a>
-</td>
 <td>4</td>
 <td>0</td>
+<td>1.083s</td>
+<td class="failures">42%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/com.prime.controller.test.html">com.prime.controller.test</a>
+</td>
+<td>5</td>
+<td>1</td>
 <td>0</td>
-<td>3.077s</td>
-<td class="success">100%</td>
+<td>2.990s</td>
+<td class="failures">80%</td>
 </tr>
 <tr>
 <td class="success">
@@ -105,13 +133,13 @@
 <td>17</td>
 <td>0</td>
 <td>0</td>
-<td>3.389s</td>
+<td>3.301s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -131,17 +159,17 @@
 <td>3</td>
 <td>0</td>
 <td>0</td>
-<td>0.388s</td>
+<td>0.456s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
-<td class="success"/>
+<td class="failures"/>
 <a href="classes/com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest.html">com.prime.Integration.test.PrimeNumberEnd2EndIntegrationTest</a>
 <td>4</td>
+<td>4</td>
 <td>0</td>
-<td>0</td>
-<td>0.342s</td>
-<td class="success">100%</td>
+<td>0.627s</td>
+<td class="failures">0%</td>
 </tr>
 <tr>
 <td class="success"/>
@@ -149,8 +177,17 @@
 <td>4</td>
 <td>0</td>
 <td>0</td>
-<td>3.077s</td>
+<td>2.863s</td>
 <td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures"/>
+<a href="classes/com.prime.controller.test.PrimeNumberControllerTest2.html">com.prime.controller.test.PrimeNumberControllerTest2</a>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.127s</td>
+<td class="failures">0%</td>
 </tr>
 <tr>
 <td class="success"/>
@@ -158,7 +195,7 @@
 <td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0.002s</td>
+<td>0.001s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
@@ -167,7 +204,7 @@
 <td>7</td>
 <td>0</td>
 <td>0</td>
-<td>1.658s</td>
+<td>1.725s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
@@ -176,7 +213,7 @@
 <td>8</td>
 <td>0</td>
 <td>0</td>
-<td>1.729s</td>
+<td>1.575s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -190,7 +227,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.6</a> at May 8, 2018 8:28:14 PM</p>
+<a href="http://www.gradle.org">Gradle 4.6</a> at May 8, 2018 9:57:19 PM</p>
 </div>
 </div>
 </body>

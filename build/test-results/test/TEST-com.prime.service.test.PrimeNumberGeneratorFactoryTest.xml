@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.prime.service.test.PrimeNumberGeneratorFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-08T19:28:10" hostname="dibbydon-PC" time="0.002">
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-08T20:57:14" hostname="dibbydon-PC" time="0.002">
   <properties/>
-  <testcase name="testGivenParameter_Option_FactoryReturns_AtkinsGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.002"/>
+  <testcase name="testGivenParameter_Option_FactoryReturns_AtkinsGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.001"/>
   <testcase name="testGivenNoParameterFactoryReturns_EratosthenesGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
