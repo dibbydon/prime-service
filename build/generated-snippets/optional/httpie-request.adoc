@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ http GET 'http://localhost:8080/primes/10?algo=pll' \
+    'Accept:application/json'
+----

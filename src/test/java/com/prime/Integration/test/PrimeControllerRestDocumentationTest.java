@@ -49,7 +49,7 @@ public class PrimeControllerRestDocumentationTest {
 		mockMvc.perform(get("/primes/1").accept(MediaType.APPLICATION_JSON))
 		                .andDo(print())
 		                .andExpect(status().isBadRequest())
-		                .andDo(document("index", responseFields(
+		                .andDo(document("exception", responseFields(
 		                		fieldWithPath("message").description("error message thrown by the exception"),
 		                		fieldWithPath("additionalMessage").description("a more detailed excetion providing stack traces"))));
 	}
@@ -59,7 +59,7 @@ public class PrimeControllerRestDocumentationTest {
 		mockMvc.perform(get("/primes/10?algo=pll").accept(MediaType.APPLICATION_JSON))
 					.andDo(print())
                     .andExpect(status().isOk())
-                    .andDo(document("index", requestParameters(
+                    .andDo(document("optional", requestParameters(
                             		        parameterWithName("algo").description("parameter to determine the algorithm to be used in request"))));
 	}
 	

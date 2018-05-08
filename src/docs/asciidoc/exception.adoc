@@ -1,0 +1,9 @@
+= Rest Doc for Prime API
+
+.request
+include::{snippets}/exception/http-request.adoc[]
+
+.response
+include::{snippets}/exception/http-response.adoc[]
+
+

@@ -1,0 +1,9 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Cache-Control: max-age=1, public, s-maxage=1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 33
+
+{"Initial":10,"Primes":[2,3,5,7]}
+----
