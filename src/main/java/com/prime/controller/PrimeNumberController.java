@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prime.exception.BadInputException;
+import com.prime.exception.InvalidInputException;
 import com.prime.model.PrimeResult;
 import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
@@ -22,7 +22,7 @@ public class PrimeNumberController {
 	
 	
 	@GetMapping(value = "/primes/{limit}", produces = { "application/json", "application/xml" })
-	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit) throws BadInputException {
+	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit) throws InvalidInputException {
 		PrimeNumberGeneratorFactory primeFactory = new PrimeNumberGeneratorFactory();
 		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();
 		
@@ -36,7 +36,7 @@ public class PrimeNumberController {
 	}
 	
 	@GetMapping(value = "/primes/{limit}",  params= {"algo"}, produces = { "application/json", "application/xml" })
-	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit, @RequestParam("algo") String algorithm) throws BadInputException {
+	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit, @RequestParam("algo") String algorithm) throws InvalidInputException {
 		PrimeNumberGeneratorFactory primeFactory = new PrimeNumberGeneratorFactory(algorithm);
 		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();
 		

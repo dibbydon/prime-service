@@ -67,7 +67,7 @@ public class PrimeNumberEnd2EndIntegrationTest {
 	public void givenInvalidInputOf_1_ExpectErrorDetailedMessage() throws IOException {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/1", String.class);
 		System.out.println(responseEntity);
-		String message = "input must be greater than 2";
+		String message = "input must be greater than or equal to 2";
 		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
 		assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.BAD_REQUEST));
 		assertThat(message , equalTo(ctx.read("$.message")));
@@ -78,7 +78,7 @@ public class PrimeNumberEnd2EndIntegrationTest {
 	public void givenInvalidInputOf_1_WithOptionalParameterExpectErrorDetailedMessage() throws IOException {
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:"+ port +"/primes/1?algo=pll", String.class);
 		System.out.println(responseEntity);
-		String message = "input must be greater than 2";
+		String message = "input must be greater than or equal to 2";
 		ReadContext ctx = JsonPath.parse(responseEntity.getBody());
 		assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.BAD_REQUEST));
 		assertThat(message , equalTo(ctx.read("$.message")));

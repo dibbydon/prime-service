@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import com.prime.exception.BadInputException;
+import com.prime.exception.InvalidInputException;
 
 import com.prime.model.ErrorDetails;
 
@@ -24,7 +24,7 @@ import com.prime.model.ErrorDetails;
 public class PrimeControllerExceptionHandler {
 	private static Logger log = LoggerFactory.getLogger(PrimeControllerExceptionHandler.class);
 	
-	@ExceptionHandler(BadInputException.class)
+	@ExceptionHandler(InvalidInputException.class)
 	public ResponseEntity<?> exception(Exception ex){
 	   StringWriter stringWriter = new StringWriter();
 	   ex.printStackTrace(new PrintWriter(stringWriter));

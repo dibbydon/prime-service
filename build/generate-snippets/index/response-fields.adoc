@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`+Initial+`
+|`+Number+`
+|the limit to which prime number can be generated inclusive
+
+|`+Primes+`
+|`+Array+`
+|an array of prime numbers within the limit inclusive
+
+|===

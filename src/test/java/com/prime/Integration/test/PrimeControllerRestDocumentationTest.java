@@ -42,11 +42,11 @@ public class PrimeControllerRestDocumentationTest {
 	
 	@Test 
 	public void testRequestWithInvalidInputShouldReturnErrorResponse() throws Exception {
-		mockMvc.perform(get("primes/1").accept(MediaType.APPLICATION_JSON))
+		mockMvc.perform(get("/primes/1").accept(MediaType.APPLICATION_JSON))
 		                .andExpect(status().isBadRequest())
-		                .andDo(document("index", responseFields(
+		                .andDo(document("error", responseFields(
 		                		fieldWithPath("message").description("error message thrown by the exception"),
-		                		fieldWithPath("additionMessage").description("a more detailed excetion providing stack traces"))));
+		                		fieldWithPath("additionalMessage").description("a more detailed excetion providing stack traces"))));
 	}
 	
 	@Test

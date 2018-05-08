@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.prime.controller.PrimeControllerExceptionHandler;
 import com.prime.controller.PrimeNumberController;
-import com.prime.exception.BadInputException;
+import com.prime.exception.InvalidInputException;
 
 
 public class PrimeNumberControllerTest {
@@ -54,7 +54,7 @@ public class PrimeNumberControllerTest {
 	}
 
 	@Test
-	public void testPrimeNumberServiceInteraction() throws BadInputException {
+	public void testPrimeNumberServiceInteraction() throws InvalidInputException {
 		Integer limit = 3;
 				
 		ResponseEntity<?> response = primeNumbercontroller.getPrimeNumbers(limit);
@@ -81,7 +81,7 @@ public class PrimeNumberControllerTest {
 		
 		mockMvc.perform(get("/primes/{limit}", limit))
 		       .andExpect(status().isBadRequest())
-		       .andExpect(jsonPath("$.message").value("input must be greater than 2"));
+		       .andExpect(jsonPath("$.message").value("input must be greater than or equal to 2"));
 	}
 	
 	@Test

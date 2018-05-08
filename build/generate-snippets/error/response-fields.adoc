@@ -1,0 +1,12 @@
+|===
+|Path|Type|Description
+
+|`+message+`
+|`+String+`
+|error message thrown by the exception
+
+|`+additionalMessage+`
+|`+String+`
+|a more detailed excetion providing stack traces
+
+|===
