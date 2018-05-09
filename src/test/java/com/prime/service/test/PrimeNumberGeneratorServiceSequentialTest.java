@@ -121,7 +121,8 @@ public class PrimeNumberGeneratorServiceSequentialTest {
 	 * @throws InvalidInputException
 	 * this assume a minimum of 3 milisecond should not be exceeded 
 	 * in calculation and returning results. usually this should be 
-	 * benchmark with stated criteria.
+	 * benchmark with stated criteria. on an i7 Quad Core processor
+	 * 8GB memory with no other process running
 	 */
 	@Test(timeout= 3000)
 	public void givenInput_10000000_assertReturnIn3milisecond() throws InvalidInputException {
