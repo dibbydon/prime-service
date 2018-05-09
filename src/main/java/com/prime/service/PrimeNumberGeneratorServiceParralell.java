@@ -23,18 +23,19 @@ public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGenerato
 	private static Logger log = LoggerFactory.getLogger(PrimeNumberGeneratorServiceParralell.class);
 	@Override
 	public PrimeResult generatePrimeNumbers(Integer limit) throws InvalidInputException {
-		List<Integer> rangeToLimit = new ArrayList<>();
+		List<Integer> primes = new ArrayList<>();
 		if(limit < 2) {
 			log.error("input must be greater than or equal to 2");
 		    throw new InvalidInputException("input must be greater than or equal to 2");
 		}
 		
 		boolean []range = new boolean[limit + 1];
+		
 		Consumer<Integer> erastosthenes = (e) -> {
 			int count = 0;
 			Integer value = (int) (Math.pow(e, 2) + count * e);
 			while (value <= limit) {
-				if(!range[value]) {
+				if (!range[value]) {
 					range[value] = true;
 				}
 				count++;
@@ -50,11 +51,11 @@ public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGenerato
 		
 		for (int i = 2; i < range.length; i++) {
 			if(range[i] == false) {
-				rangeToLimit.add(i);
+				primes.add(i);
 			}
 		}
 		
-		return new PrimeResult(limit, rangeToLimit);
+		return new PrimeResult(limit, primes);
 	}
 	
 	Boolean isPrime(Integer value) {
