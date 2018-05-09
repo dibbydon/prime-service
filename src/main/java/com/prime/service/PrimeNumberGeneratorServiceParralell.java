@@ -58,8 +58,5 @@ public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGenerato
 		return new PrimeResult(limit, primes);
 	}
 	
-	Boolean isPrime(Integer value) {
-		return value > 1 && IntStream.rangeClosed(2, (int) Math.sqrt(value)).boxed().noneMatch(divisor -> value % divisor == 0);
-	}
 
 }
