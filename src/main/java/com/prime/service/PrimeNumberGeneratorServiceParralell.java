@@ -50,7 +50,7 @@ public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGenerato
 		                               .forEach(erastosthenes);
 		
 		for (int i = 2; i < range.length; i++) {
-			if(range[i] == false) {
+			if(!range[i]) {
 				primes.add(i);
 			}
 		}
