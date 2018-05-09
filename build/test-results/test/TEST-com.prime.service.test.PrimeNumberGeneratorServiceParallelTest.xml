@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-09T09:44:08" hostname="dibbydon-PC" time="1.178">
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-09T09:46:53" hostname="dibbydon-PC" time="1.308">
   <properties/>
-  <testcase name="givenInput_10000000_assertReturnIn3milisecond" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="1.172"/>
+  <testcase name="givenInput_10000000_assertReturnIn3milisecond" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="1.302"/>
   <testcase name="givenNumber_2_Return_1_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.001"/>
   <testcase name="givenInput_11_Return_5_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.0"/>
-  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.001"/>
-  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.0"/>
+  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.0"/>
+  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.001"/>
   <testcase name="givenAnInvalidNumber_1_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.001"/>
   <testcase name="givenInput_10_Return_4_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.0"/>
   <testcase name="givenInput_100_Return_25_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceParallelTest" time="0.001"/>
-  <system-out><![CDATA[2018-05-09 10:44:09.428 ERROR 4368 --- [    Test worker] p.s.PrimeNumberGeneratorServiceParralell : input must be greater than or equal to 2
+  <system-out><![CDATA[2018-05-09 10:46:55.023 ERROR 16232 --- [    Test worker] p.s.PrimeNumberGeneratorServiceParralell : input must be greater than or equal to 2
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
