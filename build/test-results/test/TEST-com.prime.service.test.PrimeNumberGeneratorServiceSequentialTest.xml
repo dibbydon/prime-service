@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-12T18:46:07" hostname="dibbydon-PC" time="2.348">
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-12T18:57:40" hostname="dibbydon-PC" time="1.822">
   <properties/>
-  <testcase name="givenInput_10000000_assertReturnIn3milisecond" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="2.343"/>
+  <testcase name="givenInput_10000000_assertReturnIn3milisecond" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="1.819"/>
   <testcase name="givenNumber_2_Return_1_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
   <testcase name="givenInput_11_Return_5_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
-  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
-  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
-  <testcase name="givenAnInvalidNumber_1_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
+  <testcase name="givenInput_1000_Return_168_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
+  <testcase name="givenAnInput_3_Return_2_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
+  <testcase name="givenAnInvalidNumber_1_throwInvalidInputException" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
   <testcase name="givenInput_10_Return_4_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.001"/>
   <testcase name="givenInput_100_Return_25_PrimeNumber" classname="com.prime.service.test.PrimeNumberGeneratorServiceSequentialTest" time="0.0"/>
-  <system-out><![CDATA[2018-05-12 19:46:09.379 ERROR 5696 --- [    Test worker] .s.PrimeNumberGeneratorServiceSequential : input must be greater than or equal to 2
+  <system-out><![CDATA[2018-05-12 19:57:42.342 ERROR 13212 --- [    Test worker] .s.PrimeNumberGeneratorServiceSequential : input must be greater than or equal to 2
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

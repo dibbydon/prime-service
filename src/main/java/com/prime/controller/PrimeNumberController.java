@@ -31,12 +31,7 @@ public class PrimeNumberController {
 	
 	@GetMapping(value = "/primes/{limit}",  produces = { "application/json", "application/xml" })
 	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit, @RequestParam(value = "algo", required = false) Optional<String> algorithm) throws InvalidInputException {
-		PrimeNumberGeneratorFactory primeFactory;
-		if (algorithm.isPresent()) {
-		    primeFactory = new PrimeNumberGeneratorFactory(algorithm.get());
-		} else {
-			primeFactory = new PrimeNumberGeneratorFactory();
-		}
+		PrimeNumberGeneratorFactory primeFactory = algorithm.isPresent() ? new PrimeNumberGeneratorFactory(algorithm.get())	: new PrimeNumberGeneratorFactory();
 		    
 		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();
 		
