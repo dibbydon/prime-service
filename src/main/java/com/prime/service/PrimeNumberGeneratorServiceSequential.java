@@ -17,7 +17,7 @@ import com.prime.model.PrimeResult;
 /**
  * @author dibbydon
  * This class attempt to provides an implementation of the Sieve of Erastothenes algorithm 
- * for finding prime number within a specific limit in sequence.
+ * for finding prime number within a specific limit in sequencial execution.
  */
 public class PrimeNumberGeneratorServiceSequential implements PrimeNumberGeneratorService {
 	private static Logger log = LoggerFactory.getLogger(PrimeNumberGeneratorServiceSequential.class);

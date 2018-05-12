@@ -11,7 +11,7 @@ import com.prime.exception.InvalidInputException;
 import com.prime.model.PrimeResult;
 import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
-import com.prime.service.PrimeNumberGeneratorServiceParralell;
+import com.prime.service.PrimeNumberGeneratorServiceParallel;
 /**
  * 
  * @author dibbydon
@@ -52,7 +52,7 @@ public class PrimeNumberGeneratorServiceParallelTest {
 		assertTrue("expected size not returned", result.getPrimes().size() == 1);
 		assertTrue("expected value not returned",result.getPrimes().contains(2));
 		
-		assertThat(generatorService, instanceOf(PrimeNumberGeneratorServiceParralell.class));
+		assertThat(generatorService, instanceOf(PrimeNumberGeneratorServiceParallel.class));
 	}
 	
 	@Test

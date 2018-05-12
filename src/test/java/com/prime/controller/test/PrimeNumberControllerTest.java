@@ -9,6 +9,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.Optional;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -57,7 +59,7 @@ public class PrimeNumberControllerTest {
 	public void testPrimeNumberServiceInteraction() throws InvalidInputException {
 		Integer limit = 3;
 				
-		ResponseEntity<?> response = primeNumbercontroller.getPrimeNumbers(limit);
+		ResponseEntity<?> response = primeNumbercontroller.getPrimeNumbers(limit, Optional.empty());
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 		
 	}

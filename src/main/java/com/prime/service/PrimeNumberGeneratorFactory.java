@@ -23,7 +23,7 @@ public class PrimeNumberGeneratorFactory {
 	 */
 	public PrimeNumberGeneratorService getPrimeNumberGenerator() {
 		if ("pll".equals(genType)) {
-			return new PrimeNumberGeneratorServiceParralell();
+			return new PrimeNumberGeneratorServiceParallel();
 		} else 
 			return new PrimeNumberGeneratorServiceSequential();
 		

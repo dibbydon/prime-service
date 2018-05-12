@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import com.prime.service.PrimeNumberGeneratorFactory;
 import com.prime.service.PrimeNumberGeneratorService;
-import com.prime.service.PrimeNumberGeneratorServiceParralell;
+import com.prime.service.PrimeNumberGeneratorServiceParallel;
 import com.prime.service.PrimeNumberGeneratorServiceSequential;
 
 /**
@@ -47,7 +47,7 @@ public class PrimeNumberGeneratorFactoryTest {
 		factory = new PrimeNumberGeneratorFactory("pll");
 		PrimeNumberGeneratorService genService = factory.getPrimeNumberGenerator();
 		
-		assertThat(genService, instanceOf(PrimeNumberGeneratorServiceParralell.class));
+		assertThat(genService, instanceOf(PrimeNumberGeneratorServiceParallel.class));
 	}
 	
 

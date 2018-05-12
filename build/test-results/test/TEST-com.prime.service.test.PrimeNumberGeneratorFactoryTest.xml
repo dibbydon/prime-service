@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.prime.service.test.PrimeNumberGeneratorFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-09T09:46:53" hostname="dibbydon-PC" time="0.002">
+<testsuite name="com.prime.service.test.PrimeNumberGeneratorFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-12T18:16:17" hostname="dibbydon-PC" time="0.002">
   <properties/>
-  <testcase name="testGivenParameter_Option_FactoryReturns_EratosthenesParrallelGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.001"/>
-  <testcase name="testGivenNoParameterFactoryReturns_EratosthenesSequentialGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.001"/>
+  <testcase name="testGivenParameter_Option_FactoryReturns_EratosthenesParrallelGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.002"/>
+  <testcase name="testGivenNoParameterFactoryReturns_EratosthenesSequentialGenerator" classname="com.prime.service.test.PrimeNumberGeneratorFactoryTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

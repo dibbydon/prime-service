@@ -1,5 +1,6 @@
 package com.prime.controller;
 
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.http.CacheControl;
@@ -28,24 +29,15 @@ import com.prime.service.PrimeNumberGeneratorService;
 @RestController
 public class PrimeNumberController {
 	
-	
 	@GetMapping(value = "/primes/{limit}",  produces = { "application/json", "application/xml" })
-	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit) throws InvalidInputException {
-		PrimeNumberGeneratorFactory primeFactory = new PrimeNumberGeneratorFactory();
-		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();
-		
-		PrimeResult result = primeNumberService.generatePrimeNumbers(limit);
-		
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.setCacheControl(CacheControl.maxAge(1000, TimeUnit.MILLISECONDS)
-				                                    .sMaxAge(1000, TimeUnit.MILLISECONDS)
-				                                    .cachePublic());
-		return new ResponseEntity<> (result, responseHeaders, HttpStatus.OK);
-	}
-	
-	@GetMapping(value = "/primes/{limit}",  params= {"algo"}, produces = { "application/json", "application/xml" })
-	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit, @RequestParam("algo") String algorithm) throws InvalidInputException {
-		PrimeNumberGeneratorFactory primeFactory = new PrimeNumberGeneratorFactory(algorithm);
+	public ResponseEntity<?> getPrimeNumbers(@PathVariable("limit") Integer limit, @RequestParam(value = "algo", required = false) Optional<String> algorithm) throws InvalidInputException {
+		PrimeNumberGeneratorFactory primeFactory;
+		if (algorithm.isPresent()) {
+		    primeFactory = new PrimeNumberGeneratorFactory(algorithm.get());
+		} else {
+			primeFactory = new PrimeNumberGeneratorFactory();
+		}
+		    
 		PrimeNumberGeneratorService primeNumberService = primeFactory.getPrimeNumberGenerator();
 		
 		PrimeResult result = primeNumberService.generatePrimeNumbers(limit);

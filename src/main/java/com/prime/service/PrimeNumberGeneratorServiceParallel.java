@@ -15,12 +15,12 @@ import com.prime.model.PrimeResult;
  * 
  * @author dibbydon
  * This class attempt to provides an implementation of the Sieve of Erastothenes algorithm 
- * for finding prime number within a specific limit with a parrallel.
+ * for finding prime number within a specific limit with a parrallel execution.
  * 
  */
 
-public class PrimeNumberGeneratorServiceParralell implements PrimeNumberGeneratorService {
-	private static Logger log = LoggerFactory.getLogger(PrimeNumberGeneratorServiceParralell.class);
+public class PrimeNumberGeneratorServiceParallel implements PrimeNumberGeneratorService {
+	private static Logger log = LoggerFactory.getLogger(PrimeNumberGeneratorServiceParallel.class);
 	@Override
 	public PrimeResult generatePrimeNumbers(Integer limit) throws InvalidInputException {
 		List<Integer> primes = new ArrayList<>();
