@@ -1,7 +1,0 @@
-|===
-|Parameter|Description
-
-|`+algo+`
-|parameter to determine the algorithm to be used in request
-
-|===

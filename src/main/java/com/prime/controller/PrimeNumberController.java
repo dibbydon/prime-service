@@ -21,7 +21,7 @@ import com.prime.service.PrimeNumberGeneratorService;
  * 
  * @author dibbydon
  * This class marks the entry point into the 
- * prime service api, it provides two get methods for 
+ * prime service api, it provides a get methods for 
  * handing default request and option to request an algorithm
  * for execution.
  *
